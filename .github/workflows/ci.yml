@@ -13,4 +13,3 @@ jobs:
     # ... then your own project steps ...
       with:
           php_extensions: "xdebug"
-          coverage_clover: "coverage/clover.xml"
