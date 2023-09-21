@@ -13,5 +13,3 @@ jobs:
       with:
         version: 9.6.11
         php_extensions: gd
-       
-# ... then your own project steps ...
