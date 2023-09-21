@@ -9,9 +9,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: php-actions/composer@v6 # or alternative dependency management
-    - uses: irongut/CodeCoverageSummary@v1.3.0
-    - uses: php-actions/phpunit@v3
+    - name: PHP Unit Report
+      uses: php-actions/phpunit@v3
       with:
         version: 9.6.11
         php_extensions: gd xdebug
         coverage_clover: "coverage/clover.xml"
+    - name: Code Coverage Report
+      uses: irongut/CodeCoverageSummary@v1.3.0
