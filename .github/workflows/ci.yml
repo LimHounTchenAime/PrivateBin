@@ -18,5 +18,4 @@ jobs:
     - name: Code Coverage Report
       uses: irongut/CodeCoverageSummary@v1.3.0
       env:
-        global:
-          XDEBUG_MODE: coverage
+        XDEBUG_MODE: coverage
