@@ -19,5 +19,5 @@ jobs:
 
     - uses: irongut/CodeCoverageSummary@v1.3.0
       with:
-        filename: log/coverage.cobertura.xml
+        filename: coverage.cobertura.xml
 
