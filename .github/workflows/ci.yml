@@ -13,8 +13,8 @@ jobs:
       uses: php-actions/phpunit@v3
       with:
         version: 9.6.11
-        php_extensions: gd xdebug
-        coverage_cobertura: "coverage/cobertura.xml"
+        php_extensions: "gd xdebug"
+        coverage_clover: "coverage/clover.xml"
       env:
         XDEBUG_MODE: coverage
 
