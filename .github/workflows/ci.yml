@@ -14,8 +14,9 @@ jobs:
       with:
         version: 9.6.11
         php_extensions: gd xdebug
-      #env:
-        #XDEBUG_MODE: coverage
+        coverage_cobertura: "coverage/cobertura.xml"
+      env:
+        XDEBUG_MODE: coverage
 
 
     - name: Code Coverage Report
