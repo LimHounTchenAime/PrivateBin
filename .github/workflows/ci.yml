@@ -18,7 +18,7 @@ jobs:
         #XDEBUG_MODE: coverage
 
 
-#    - name: Code Coverage Report
- #     uses: irongut/CodeCoverageSummary@v1.3.0
-  #    with:
-   #     filename: log/coverage.cobertura.xml
+    - name: Code Coverage Report
+      uses: irongut/CodeCoverageSummary@v1.3.0
+      with:
+        filename: log/coverage.cobertura.xml
