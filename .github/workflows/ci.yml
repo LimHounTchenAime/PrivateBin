@@ -20,7 +20,7 @@ jobs:
       with:
         php_version: 8.1
         path: ./lib
-        standard: phpcs.xml
+        standard: phpunit.xml
 
 
 #    - uses: irongut/CodeCoverageSummary@v1.3.0
