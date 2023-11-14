@@ -174,6 +174,7 @@ abstract class AbstractModel
      * @access protected
      * @param  array $data
      * @throws Exception
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     protected function _validate(array $data)
     {
