@@ -7,8 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Composer
     - uses: php-actions/composer@v6 # or alternative dependency management
+
+# php unit
+    - name: Php Unit
     - uses: php-actions/phpunit@v3
       with:
         version: 9.6.11
@@ -17,24 +23,28 @@ jobs:
       env:
         XDEBUG_MODE: coverage
 
+# code coverage
+    - name: Code Coverage
+      uses: irongut/CodeCoverageSummary@v1.3.0
+      with:
+        filename: coverage/cobertura.xml
+
+# code sniffer
+    - name: Code Sniffer
+      uses: php-actions/phpcs@v1
+      with:
+        php_version: 8.1
+        path: lib/
+        standard: PSR1
 
 # mess detector
-    - uses: php-actions/phpmd@v1
+    - name: Mess Detector
+      uses: php-actions/phpmd@v1
       with:
         php_version: 8.1
         path: lib/
         output: text
         ruleset: unusedcode
 
-# code sniffer
-#    - uses: php-actions/phpcs@v1
-#      with:
-#        php_version: 8.1
-#        path: lib/
-#        standard: PSR1
 
-# code coverage
-#    - uses: irongut/CodeCoverageSummary@v1.3.0
-#      with:
-#        filename: coverage/cobertura.xml
 
