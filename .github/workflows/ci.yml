@@ -17,12 +17,21 @@ jobs:
       env:
         XDEBUG_MODE: coverage
 
-# code sniffer
-    - uses: php-actions/phpcs@v1
+
+# mess detector
+    - uses: php-actions/phpmd@v1
       with:
         php_version: 8.1
         path: lib/
-        standard: PSR1
+        output: text
+        ruleset: test/phpmd/ruleset.xml
+
+# code sniffer
+#    - uses: php-actions/phpcs@v1
+#      with:
+#        php_version: 8.1
+#        path: lib/
+#        standard: PSR1
 
 # code coverage
 #    - uses: irongut/CodeCoverageSummary@v1.3.0
