@@ -235,7 +235,7 @@ class Paste extends AbstractModel
     protected function _validate(array $data)
     {
         // reject invalid or disabled formatters
-        if (!array_key_exists($this->data['adata'][1], $this->_conf->getSection('formatter_options'))) {
+        if (!array_key_exists($data['adata'][1], $this->_conf->getSection('formatter_options'))) {
             throw new Exception('Invalid data.', 75);
         }
 
