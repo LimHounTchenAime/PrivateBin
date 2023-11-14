@@ -19,12 +19,12 @@ jobs:
 
 
 # mess detector
-#    - uses: php-actions/phpmd@v1
-#      with:
-#        php_version: 8.1
-#        path: lib/
-#        output: text
-#        ruleset: unusedcode
+    - uses: php-actions/phpmd@v1
+      with:
+        php_version: 8.1
+        path: lib/
+        output: text
+        ruleset: unusedcode
 
 # code sniffer
 #    - uses: php-actions/phpcs@v1
