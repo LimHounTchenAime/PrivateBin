@@ -104,7 +104,7 @@ abstract class AbstractModel
     public function setData(array $data)
     {
         $data = $this->_sanitize($data);
-        $this->_validate($data);
+        $this->_validate();
         $this->_data = $data;
 
         // calculate a 64 bit checksum to avoid collisions
