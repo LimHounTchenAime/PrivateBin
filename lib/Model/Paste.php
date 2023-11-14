@@ -235,23 +235,23 @@ class Paste extends AbstractModel
     protected function _validate()
     {
         // reject invalid or disabled formatters
-        if (!array_key_exists($this->data['adata'][1], $this->_conf->getSection('formatter_options'))) {
+        if (!array_key_exists($this->get()['adata'][1], $this->_conf->getSection('formatter_options'))) {
             throw new Exception('Invalid data.', 75);
         }
 
         // discussion requested, but disabled in config or burn after reading requested as well, or invalid integer
         if (
-            ($this->data['adata'][2] === 1 && ( // open discussion flag
+            ($this->get()['adata'][2] === 1 && ( // open discussion flag
                 !$this->_conf->getKey('discussion') ||
-                $this->data['adata'][3] === 1  // burn after reading flag
+                $this->get()['adata'][3] === 1  // burn after reading flag
             )) ||
-            ($this->data['adata'][2] !== 0 && $this->data['adata'][2] !== 1)
+            ($this->get()['adata'][2] !== 0 && $this->get()['adata'][2] !== 1)
         ) {
             throw new Exception('Invalid data.', 74);
         }
 
         // reject invalid burn after reading
-        if ($this->data['adata'][3] !== 0 && $this->data['adata'][3] !== 1) {
+        if ($this->get()['adata'][3] !== 0 && $this->get()['adata'][3] !== 1) {
             throw new Exception('Invalid data.', 73);
         }
     }
